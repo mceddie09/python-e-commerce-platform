@@ -1,0 +1,39 @@
+{% extends 'admin.html' %}
+{% block title %}Admin View Orders{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/Admin.css' %}">
+
+<h1 class="adm-order-dets">Order Details</h1>
+<table class="order-details-table">
+    <tr>
+        <th>Invoice Number:</th>
+        <td>{{ order.invoice_number }}</td>
+    </tr>
+    <tr>
+        <th>Buyer:</th>
+        <td>{{ order.user.first_name }} {{ order.user.surname }}</td>
+    </tr>
+    <tr>
+        <th>Total Price:</th>
+        <td>${{ order.total_price }}</td>
+    </tr>
+    <tr>
+        <th>Ordered Products:</th>
+        <td>
+            <ul>
+                {% for item in order_items %}
+                <li>{{ item.product.brand }} - Quantity: {{ item.quantity }}</li>
+                {% empty %}
+                <li>No products found for this order.</li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+   
+</table>
+
+<a href="{% url 'admin_view_orders' %}" class="btn btn-primary">Back to Orders</a>
+{% endblock %}

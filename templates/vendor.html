@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Page</title>
+    <link rel="stylesheet" href="{% static 'css/Vendor.css' %}">
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome  {{ user.username }}</h1>
+        <ul class="ven-header">
+            <li><a href="{% url 'vendor' %}" class="btn btn-primary">Home</a></li>
+            <li><a href="{% url 'vendor_products' %}" class="btn btn-primary">My Products</a></li>
+
+        
+   
+            <li><a href="{% url 'add_product' %}" class="btn btn-primary">Add Product</a></li>
+            <li><a href="{% url 'vendor_view_orders' %}" class="btn btn-primary">My Orders</a></li>
+            <li><a href="{% url 'logout_view' %}" class="btn btn-primary">Logout</a></li>
+        </ul>
+        </div>
+
+        
+
+    {% block content %}
+    <div class="vendor-home">
+        <h1>Profile</h1>
+        <p><strong>Username: </strong>{{ user.username }}</p>
+        
+        <p><strong>Name:</strong> {{ user.first_name }} {{ user.surname }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Address:</strong> {{ user.address }}</p>
+        <p><strong>National ID:</strong> {{ user.national_id }}</p>
+        <p><strong>Phone Number:</strong> {{ user.phone_number }}</p>
+        
+    </div>
+    {% endblock content %}
+</body>
+</html>

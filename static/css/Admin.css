@@ -1,0 +1,213 @@
+/* Reset default margin and padding */
+/* Admin.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+#admin-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.admin-links {
+    margin-top: 20px;
+}
+
+.admin-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.admin-links a:hover {
+    background-color: #004085;
+}
+
+.main-content {
+    margin: 20px;
+}
+
+.admin-home {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-home h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.admin-home strong {
+    font-weight: bold;
+}
+
+.admin-home a {
+    color: #007bff;
+    text-decoration: underline;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.admin-home a:hover {
+    color: #0056b3;
+}
+
+
+
+
+/*Admin_View_Products*/
+/* CSS for the product table */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.product-table td img {
+    max-width: 100px;
+    height: auto;
+}
+
+.product-table td a {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.product-table td a:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles for the hero banner */
+.hero-banner {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.hero-banner h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Optional: Styles for responsive design */
+@media (max-width: 768px) {
+    .product-table th,
+    .product-table td {
+        padding: 8px;
+    }
+    
+    .product-table td img {
+        max-width: 80px;
+    }
+}
+
+
+/* admin_orders.css */
+
+/* Style for the order table */
+.admin-all-aoders{
+    text-align: center;
+}
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-table th, .order-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.order-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Style for the View Details button */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* order_details.css */
+.adm-order-dets{
+    text-align: center;
+}
+/* Style for the order details table */
+.order-details-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 40px;
+
+}
+
+.order-details-table th, .order-details-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.order-details-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.order-details-table ul li{
+    list-style: none;
+    line-height: 1.5;
+}
+/* Style for the View Details button */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin: 10px 40px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

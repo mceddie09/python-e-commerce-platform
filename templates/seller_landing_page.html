@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/SellerLandingPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+</head>
+<body>
+    <div class="seller-landing-page">
+        <div class="seller-landing-page__content">
+            <h1>Welcome, Sellers!</h1>
+            <p>Start selling your laptops on Laptops Bazaar today and reach thousands of potential buyers.</p>
+            <a href="{% url 'register' %}"><button class="seller-landing-page__signup-btn">Sign Up Now</button></a>
+        </div>
+        <div class="seller-landing-page__benefits">
+            <h2>Why Sell with Us</h2>
+        </div>
+        <div class="bazaar-advantages">
+            <div class="advantage">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+
+                <h3>Secure M-Pesa Payment</h3>
+            </div>
+            <div class="advantage">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+
+                <h3>Easy-to-use dashboard</h3>
+            </div>
+            <div class="advantage">
+                <i class="fa fa-users" aria-hidden="true"></i>
+
+                <h3>Large customer base</h3>
+            </div>
+            <div class="advantage">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+
+                <h3>Marketing and promotion</h3>
+            </div>
+        </div>
+        <div class="seller-landing-page__how-to-signup">
+            <h2>How to Sign Up as a Seller</h2>
+            <ul>
+                <li>Create a seller account.</li>
+                <li>Complete seller profile and product listings.</li>
+                <li>Start selling.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

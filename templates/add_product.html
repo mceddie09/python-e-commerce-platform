@@ -1,0 +1,17 @@
+{% extends 'vendor.html' %}
+{%load static%}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/Vendor.css' %}">
+
+<div id="add-product">
+    <h1>Add Product</h1>
+    <form id='add-pro' method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id='add-btn' type="submit">Save</button>
+    </form>
+</div>
+{% endblock content %}
+
+

@@ -1,0 +1,203 @@
+/* header_styles.css */
+body{
+    background-color: #edf0f1;
+}
+#header {
+    background-color: #bbd3ec; /* Header background color */
+    color: #fff; /* Header text color */
+    padding: 10px 0;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ven-header {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ven-header li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#header .btn {
+    background-color: #fff; /* Button background color */
+    color: #007bff; /* Button text color */
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#header .btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    color: #fff; /* Text color on hover */
+}
+.vendor-home{
+    background-image: url('/static/Images/Laptop5.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    padding: 30px 0px 0px 150px;
+    font-size: 20px;
+}
+.vendor-home p{
+    color: #bbd3ec;
+    font-size: 25px;
+}
+
+/*Add products*/
+
+#add-product {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+#add-product h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Heading color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#add-pro {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#add-pro label {
+    font-weight: bold;
+    color: #333; /* Label color */
+    padding-bottom: 10px;
+}
+
+#add-product input[type="text"],
+#add-product input[type="number"],
+#add-product textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; /* Input border color */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+#add-product button[type="submit"] {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#add-product button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+/*Vendor Products*/
+
+#vendor-products {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+}
+
+#vendor-products h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Heading color */
+    margin-bottom: 20px;
+}
+
+.ven-pros {
+    
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+.ven-pro {
+    max-width: 300px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 5px;
+    background-color: #fff; /* Background color */
+}
+
+.ven-pro img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.ven-pro strong {
+    font-weight: bold;
+    color: #007bff; /* Strong text color */
+}
+
+.ven-pro p {
+    margin-bottom: 5px;
+}
+
+.ven-pros .empty {
+    color: #777; /* Empty list item color */
+}
+
+
+/*Vendor info*/
+.ven-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #edf0f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ven-container h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.ven-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ven-container input[type="text"],
+.container input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.ven-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.ven-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}

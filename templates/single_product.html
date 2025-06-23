@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+
+<div class="product-container">
+    <div class="product-card">
+        <div class="product-image-container">
+            <img src="{{ product.image.url }}" class="product-image" alt="Product Image">
+        </div>
+        <div class="product-details-container">
+            <h5 class="product-brand">Brand: {{ product.brand }}</h5>
+            <p class="product-description"> Description: {{ product.description }}</p>
+            <p class="product-price">Price: SH.{{ product.price }}</p>
+            
+            {% if product.quantity > 0 %}
+                    <p class="product-price">Available: {{ product.quantity }}</p>
+                    <div class="action-buttons"> 
+                        <a class="buy-now-button" href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+                    </div>
+                {% else %}
+                    <p class="product-price">Out of Stock</p>
+            {% endif %}
+
+            
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

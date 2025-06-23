@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Products - My E-commerce Website{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+<div>
+    
+</div>
+<div class="hero-banner">
+    <div class="pro-filter">
+        <h2>Filter Products</h2>
+        <button class="custom-button"><a href="{% url 'products' %}" class="button-link">All Products</a></button>
+        
+        
+
+        <div class="filter-buttons">
+            <h3>Available Brands</h3>
+            <form method="GET" action="{% url 'products' %}">
+                {% for brand in available_brands %}
+                    <button type="submit" name="brand" value="{{ brand }}">{{ brand }}</button>
+                {% endfor %}
+            </form>
+        </div>
+        <!-- Category Filter Buttons -->
+        <div class="filter-buttons">
+            <h3>Available Categories</h3>
+            <form method="GET" action="{% url 'products' %}">
+                {% for category in available_categories %}
+                    <button type="submit" name="category" value="{{ category }}">{{ category }}</button>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+    <!-- Brand Filter Buttons -->
+    
+   
+    <!-- Product Display -->
+    <div class="featured-pro">
+        <h2>Featured Products</h2>
+    <div class="pro-slider">
+        
+        
+        {% for product in products %}
+
+            <div class="prod-container">
+                
+                <div class="prod-banner">
+                    <img src="{{ product.image.url }}" class="prod-image" alt="{{ product.category }}">
+                    <div class="prod-details">
+                        <div class="pro-detail">
+                            <h3>{{ product.brand }}</h3>
+                            <p>Category: {{ product.category }}</p>
+                            <p class="prod-price">Price: KSH {{ product.price }}</p>
+                        </div>
+                        <div class="prod-detail">
+                            <a href="{% url 'single_product' product.id %}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</div>
+{% endblock %}

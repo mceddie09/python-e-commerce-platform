@@ -1,0 +1,27 @@
+{% extends 'vendor.html' %}
+{%load static%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/Vendor.css' %}">
+
+<div id="vendor-products">
+    <h1>My Products</h1>
+    <ul class="ven-pros">
+        {% for product in vendor_products %}
+        <li class="ven-pro">
+            <img src="{{ product.image.url }}" alt="{{ product.brand }}"><br>
+            <p>Brand: <strong>{{ product.brand }}</strong> </p>
+            <p>Category: {{ product.category }}  </p>
+            <p>Available: {{ product.quantity }}  </p>
+            <p>Price: KSH {{ product.price }}</p>
+            <p><a href="{% url 'vendor_view_single_product' product.id %}" class="btn btn-primary">View Details</a>
+            </p>            
+        </li>
+        {% empty %}
+        <li>No products available.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}
+
+

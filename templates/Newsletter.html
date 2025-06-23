@@ -1,0 +1,23 @@
+
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'css/Newsletter.css' %}">
+
+{% block content %}
+<section id="newsletter-signup">
+    <div class="newsletter-container">
+        <div class='newsletter-text'>
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest products, promotions, and <span>Special Offers!</span></p>
+        </div>
+        
+        <div class='newsletter-input'>
+            <form method="POST" action="{% url 'search' %}">
+                {% csrf_token %}
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

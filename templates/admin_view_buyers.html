@@ -1,0 +1,21 @@
+{% extends 'admin.html' %}
+
+{% load static %}
+
+{% block title %}Products - My E-commerce Website{% endblock %}
+
+{% block content %}
+<div class="user-list" id="buyer-list">
+    <h2>All Buyers</h2>
+    <p>Buyers: {{ buyers_count }}</p>
+</div>
+<div class="user-list" id="buyer-list">
+    <h2>All Buyers</h2>
+    <ul>
+        {% for buyer in buyers %}
+        <li>{{ buyer.username }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

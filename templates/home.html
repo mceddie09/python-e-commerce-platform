@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Newletter.css' %}">
+
+
+    <!-- Your head content here -->
+</head>
+<body>
+    <!-- Hero Banner Component -->
+    <div class="combined-banner">
+        <div class="hero">
+            <div class="hero__content">
+                <h1>Welcome to Laptops Bazaar</h1>
+                <p>Discover the latest laptops.</p>
+                <a href="{% url 'products' %}"><button>Shop Now</button></a>
+            </div>
+        </div>
+        <div class="seller-signup">
+            <div class="seller-signup-content">
+                <p>Or</p>
+                <p>
+                    <a href="{% url 'seller_landing_page' %}">Join Us as a Seller</a>
+                </p> 
+                <p> And Start selling your laptops on Laptops Bazaar today!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offers Component -->
+    <div class="bazaar-advantages">
+        <div class="advantage">
+            <i class="ri-secure-payment-line"></i>
+            <h3>Secure PayPal Payment</h3>
+            <p>Shop with confidence knowing your payments are secure.</p>
+        </div>
+        <div class="advantage">
+            <i class="md-local-shipping"></i>
+            <h3>Fast Shipment</h3>
+            <p>Get your orders delivered quickly with our fast shipping services.</p>
+        </div>
+        <div class="advantage">
+            <i class="bi-support"></i>
+            <h3>24/7 Customer Support</h3>
+            <p>Our dedicated support team is available round-the-clock to assist you.</p>
+        </div>
+        <div class="advantage">
+            <i class="md-outline-high-quality"></i>
+            <h3>Quality Assurance</h3>
+            <p>We ensure that all products meet our quality standards before shipping.</p>
+        </div>
+    </div>
+
+    <!-- Hero Banner Component -->
+    <div class="hero-banner">
+        <h2>Featured Products</h2>
+        <div class="pro-slider">
+            {% for product in products %}
+            <div class="prod-container">
+                <div class="prod-banner">
+                    <img src="{{ product.image.url }}" class="prod-image" alt="{{ product.category }}">
+                    <div class="prod-details">
+                        <h3>{{ product.brand }}</h3>
+                        <p>Category: {{ product.category }}</p>
+                        <p class="prod-price">Price: KSH {{ product.price }}</p>
+                        <a href="{% url 'single_product' product.id %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Brands Component -->
+    <div class="laptop-info">
+        <div class="laptop-brands">
+            <h2>Featured Brands</h2>
+            <p>We stock various brands Including</p>
+            <div class="brand-items">
+                    <div class="brand-item">
+                        <img src="{% static 'Images/Laptop1.jpeg' %}" alt="Brand 1" />
+                        <p>Apple</p>
+                    </div>
+                    <div class="brand-item">
+                        <img src="{% static 'Images/Laptop6.jpeg' %}" alt="Brand 2" />
+                        <p>Dell</p>
+                    </div>
+                    <div class="brand-item">
+                        <img src="{% static 'Images/Laptop9.jpeg' %}" alt="Brand 3" />
+                        <p>HP</p>
+                    </div>
+                    <div class="brand-item">
+                        <img src="{% static 'Images/Laptop12.jpeg' %}" alt="Brand 4" />
+                        <p>Lenovo</p>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="laptop-categories">
+            <h2>Product Categories</h2>
+            <p>Find various categories such as</p>
+            <div class="category-items">
+                <!-- Loop through categories -->
+                <div class="category-item">
+                        <img src="{% static 'Images/Laptop9.jpeg' %}" alt="Category 1" />
+                        <p>Gaming Laptops</p>
+                    </a>
+                </div>
+                <div class="category-item">
+                        <img src="{% static 'Images/Laptop9.jpeg' %}" alt="Category 2" />
+                        <p>General Purpose Laptops</p>
+                    </a>
+                </div>
+                <div class="category-item">
+                        <img src="{% static 'Images/Laptop9.jpeg' %}" alt="Category 3" />
+                        <p>Ultrabooks</p>
+                    </a>
+                </div>
+                <div class="category-item">
+                        <img src="{% static 'Images/Laptop9.jpeg' %}" alt="Category 4" />
+                        <p>Workstations</p>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Newsletter Component -->
+    
+
+    <!-- Testimonials and Contact Information -->
+    <div class="home-testimonials" style="display: flex; margin: 15px 0px; padding: 0px 35px; background: lightgrey;">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Address: 123 Nairobi Thika Road</p>
+            <p>Phone: 07xxx546x</p>
+            <p>Hours: 10:00-18:00 Sunday to Friday</p>
+        </div>
+        <div class="project-team">
+            <h2>Testimonials</h2>
+            <div class="team-member">
+                <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Testimonial 1">
+                <p><strong>Toni Odhiambo</strong><br />"Great company to work with! They exceeded my expectations."</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Testimonial 1">
+                <p><strong>Sarah Akinyi</strong><br />"Friendly staff and fast shipping. Will definitely buy from them again."</p>
+            </div>
+        </div>
+    </div>
+    {% include 'Newsletter.html' %}
+    <!-- Include necessary scripts for sliders or other interactive elements -->
+    <!-- For example, if you are using slick slider for the hero banner -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+</body>
+</html>
+
+{% endblock %}

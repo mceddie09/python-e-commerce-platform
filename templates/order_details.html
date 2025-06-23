@@ -1,0 +1,58 @@
+{% extends 'vendor.html' %}
+{% block title %}Order Details{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/orders.css' %}">
+<div class="ven-order-details">
+<h1>Order Details</h1>
+<table class="order-details-table">
+    <tr>
+        <th>Invoice Number:</th>
+        <td>{{ order.invoice_number }}</td>
+    </tr>
+    <tr>
+        <th>Buyer:</th>
+        <td>{{ order.user.first_name }} {{ order.user.surname }}</td>
+    </tr>
+    <tr>
+        <th>Total Price:</th>
+        <td>SH. {{ order.total_price }}</td>
+    </tr>
+    <tr>
+        <th>Address:</th>
+        <td>{{ order.address }}</td>
+    </tr>
+    <tr>
+        <th>City:</th>
+        <td>{{ order.city }}</td>
+    </tr>
+</table>
+
+<h2>Ordered Products</h2>
+<table class="ordered-products-table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Brand</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in order_items %}
+        <tr>
+            <td>{{ item.product.id }}</td>
+            <td>{{ item.product.brand }}</td>
+            <td>{{ item.quantity }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No products found for this order.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

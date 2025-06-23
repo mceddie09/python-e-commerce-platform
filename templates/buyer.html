@@ -1,0 +1,72 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyer Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning">
+                <span>{{ message }}</span>
+                <button class="close-btn">&times;</button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+   
+    
+    <div id="header">
+        <nav id="main-nav">
+            <h1>Hello  {{ user.username }}</h1>
+    
+            <ul class="buyer-nav">
+                <li><a href="{% url 'logout_view' %}" id="logout">Logout</a></li>
+                <li><a href="{% url 'profile' %}">My Profile</a></li>
+                <li>
+                    <form id="product-search-form" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search For Products" name="searched">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Search Products</button>
+                    </form>
+                </li>
+                <a href="{% url 'cart_summary' %}" class="btn btn-outline-dark"><i class="bi-cart-fill me-1"></i>
+                    Cart
+<span class="badge bg-dark text-white ms-1 rounded-pill" id="cart_quantity">{{ cart|length }}
+
+</span></a>            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <h2>Available Products</h2>
+        <ul id="product-list">
+            {% for product in products %}
+                <li class="product-item">
+                    <img src="{{ product.image.url }}" alt="{{ product.brand }}" class="product-image">
+                    <p class="product-details">
+                        Brand: <strong>{{ product.brand }}</strong><br>
+                        Category: <strong>{{ product.category }}</strong><br>
+                        Price: KSH {{ product.price }}
+                    </p>
+                    <a href="{% url 'product' product.id  %}" class="btn-view-product">View Product</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".close-btn").click(function() {
+                $(this).parent(".alert").fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>

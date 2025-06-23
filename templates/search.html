@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header -->
+<header id="search-header" class="header">
+    <div class="container">
+        <h1 class="title">Search Products</h1>
+        <p class="subtitle">Find a Laptop..</p>
+    </div>
+</header>
+
+<div class="container mt-5">
+    <div class="card" id="search-card">
+    
+        <div class="card-body">
+            <form id="search-form" method="POST" action="{% url 'search' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search-input" placeholder="Search For Products" name="searched">
+                </div>
+                <button type="submit" class="btn btn-secondary" id="search-btn">Search Products</button>
+            </form>
+        </div>
+    </div>
+
+    {% if searched %}
+        <div id="search-results" class="row mt-5">
+            {% for product in searched %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="Product Image" />
+                        <div class="card-body">
+                            <strong>Brand: </strong>
+                            {{ product.brand }} <br><br>
+                            <strong>Category: </strong>
+                            {{ product.category }} <br><br>
+                            <strong>Description: </strong><br>
+                            {{ product.description }} <br><br>
+                            <strong>Price: </strong>
+                            {{ product.price }}<br><br>
+                            <a href="{% url 'single_product' product.id %}" class="btn btn-outline-dark">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

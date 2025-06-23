@@ -1,0 +1,75 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:4px 60px;
+    background: linear-gradient(to bottom, #999999, #ffffff); /* Gradient background */
+    color:black;
+  }
+  .footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    flex: 1 1 200px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .footer-section ul {
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    list-style: none;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: text-decoration 0.3s ease-in-out;
+    line-height: 1.8;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-section ul.social-icons {
+    display: flex;
+  }
+  
+ .footer-section ul.social-icons li {
+    margin-right: 15px;
+  }
+  .footer-section ul.social-icons li a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+ .footer-section ul.social-icons li a:hover {
+    transform: scale(1.2);
+  }
+  
+  
+.footer-section  ul.social-icons li:last-child {
+    margin-right: 0;
+  }
+  
+  .footer-section p {
+    margin: 0;
+    text-align: center;
+  }
+  .copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .bazaar_logo{
+    width: 100px;
+    height: auto;
+  }

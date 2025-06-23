@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <!-- Include AboutUs CSS file -->
+    <link rel="stylesheet" href="{% static 'css/AboutUs.css' %}">
+</head>
+<body>
+    <div class="about-us">
+        <div class="mission-vision">
+            <h2>Mission</h2>
+            <p>Our mission is to provide high-quality products and excellent customer service to our valued customers.</p>
+            <h2>Vision</h2>
+            <p>Our vision is to become a leading provider of innovative solutions in our industry, setting new standards for quality and customer satisfaction.</p>
+        </div>
+        <div class="contact-team">
+            <div class="section-contact-info">
+                <h2>Contact Info</h2>
+                <p><strong>Address:</strong> 123 Nairobi Thika Road</p>
+                <p><strong>Phone:</strong> 07xxx546x</p>
+                <p><strong>Hours:</strong> 10:00-18:00 Sunday to Friday</p>
+                <p><strong>Mail:</strong> bazaar@mail.com</p>
+            </div>
+            <div class="project-team">
+                <h2>Management Team</h2>
+                <div class="team-member">
+                    <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Team Member 1">
+                    <p><strong>Surum Joseph</strong><br />CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Team Member 2">
+                    <p><strong>Naomi Wambui</strong><br />Sales Manager</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Team Member 3">
+                    <p><strong>Sam Henry</strong><br />Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Testimonial 1">
+                    <p><strong>Mary Achiemg</strong><br />"Great company to work with! They exceeded my expectations."</p>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Testimonial 2">
+                    <p><strong>David Ndii</strong><br />"Exceptional service and top-notch products. Highly recommended!"</p>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'Images/Laptop7.jpeg' %}" alt="Testimonial 3">
+                    <p><strong>Sarah Harson</strong><br />"Friendly staff and fast shipping. Will definitely buy from them again."</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <!-- Include Newsletter component -->
+        {% include 'Newsletter.html' %}
+    </div>
+</body>
+</html>
+
+{% endblock %}

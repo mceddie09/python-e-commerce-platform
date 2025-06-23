@@ -1,0 +1,48 @@
+<!-- processing_orders.html -->
+
+{% extends 'vendor.html' %}
+{% block title %}Processing Orders{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/orders.css' %}">
+<div class="ven-ord">
+    <h1>Orders for Your Products</h1>
+
+</div>
+{% if vendor_orders %}
+<table class="vendor-orders-table">
+    <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Date</th>
+            <th>Buyer</th>
+            <th>Total Price</th>
+            <th>Action</th>
+            <!-- Add more table headers as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in vendor_orders %}
+        <tr>
+            <td>{{ order.invoice_number }}</td>
+            <td>{{ order.created_at }}</td>
+            <td>{{ order.user.first_name }} {{ order.user.surname }}</td>
+            <td>${{ order.total_price }}</td>
+            <td>
+                <a href="{% url 'view_order_details' order.id %}" class="btn btn-primary">View Order</a>
+            </td>
+            <!-- Display other order details in additional columns -->
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No orders found for your products.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No orders found for your products.</p>
+{% endif %}
+{% endblock %}

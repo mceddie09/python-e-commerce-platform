@@ -1,0 +1,33 @@
+<!-- base.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Laptops Bazaar{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/LoginSignup.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            <h1>Welcome to Laptops Bazaar</h1>
+            <p>Log in or sign up as a seller or buyer to explore our wide range of laptops</p>
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning">
+                <span>{{ message }}</span>
+                
+            </div>
+        {% endfor %}
+    {% endif %}
+        <div classname="reg-comps">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+    </div>
+</body>
+</html>

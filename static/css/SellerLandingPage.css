@@ -1,0 +1,76 @@
+.seller-landing-page {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .seller-landing-page__content {
+    padding-top: 30px;
+    text-align: center;
+    background-image: url('/static/Images/Laptop9.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 30vh;
+    width: auto;
+  }
+  .seller-landing-page__content p{
+    color: white;
+    font-size: 20px;
+    line-height: 2;
+  }
+  
+  .seller-landing-page__signup-btn {
+    background-color: #007bff;
+    width: 140px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .seller-landing-page__how-to-signup,
+  .seller-landing-page__benefits {
+    margin-top: 40px;
+  }
+  
+  .seller-landing-page__how-to-signup h2,
+  .seller-landing-page__benefits h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  
+  .seller-landing-page__how-to-signup ul,
+  .seller-landing-page__benefits ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .seller-landing-page__how-to-signup ul li,
+  .seller-landing-page__benefits ul li {
+    margin-bottom: 10px;
+  }
+  
+  .seller-landing-page__how-to-signup ul li::before,
+  .seller-landing-page__benefits ul li::before {
+    content: "•";
+    margin-right: 10px;
+    color: #007bff;
+  }
+  .seller-landing-page__benefits h2{
+    text-align: center;
+  }
+
+@media (max-width: 600px) {
+  .seller-landing-page__content h1 {
+    font-size: 2rem;
+  }
+  
+  .seller-landing-page__signup-btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+

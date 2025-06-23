@@ -1,0 +1,208 @@
+/* Cart.css */
+
+.shopping-cart {
+
+  max-width: 90%;
+  margin: 30px;
+  padding: 20px;
+  background-color: #f7f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.shopping-cart h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.shopping-cart p{
+  font-size: 20px;
+  text-align: center;
+}
+.cart-table {
+  width: 95%;
+
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.cart-table th {
+  background-color: #f3f3f3;
+  font-weight: bold;
+  text-align: left;
+}
+
+.cart-table td {
+  text-align: center;
+}
+
+.cart-table img {
+  max-width: 100px;
+  height: auto;
+}
+
+.cart-table td a {
+  color: #f32213;
+  text-decoration: none;
+}
+
+.cart-table td a:hover {
+  text-decoration: underline;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.cart-actions {
+  margin-top: 20px;
+}
+
+.cart-actions a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0056b3;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cart-actions a:hover {
+  background-color: #f32213;
+}
+
+/* Cart.css */
+
+.pro-update {
+  display: flex;
+  align-items: center;
+}
+
+.pro-update input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.pro-update button {
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pro-update button:hover {
+  background-color: #45a049;
+}
+
+/* Cart.css or create a new CSS file for button styles */
+
+/* Style for buttons */
+.shopping-cart button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 20px;
+    background-color: #1347f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.shopping-cart button:hover {
+    background-color: #0056b3;
+}
+
+/* Optional: Style for button links */
+.shopping-cart button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.shopping-cart button a:hover {
+    text-decoration: underline;
+}
+
+/*Cart_Checkout*/
+/* Cart.css */
+
+/* Checkout page container */
+.checkout-page {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Summary container styles */
+.summary-container {
+  width: 65%; /* Adjust as needed */
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+
+}
+
+.summary-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+
+.summary-table {
+  width: 95%;
+  border-collapse: collapse;
+}
+
+.summary-table th,
+.summary-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.summary-table th {
+  background-color: #f3f3f3;
+}
+
+.summary-table td img {
+  max-width: 100px;
+  height: auto;
+}
+
+.summary-container p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.summary-container a {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1361f3;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.summary-container a:hover {
+  background-color: #0056b3;
+}

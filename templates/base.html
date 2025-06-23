@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Laptops Bazaar{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Base.css' %}">
+</head>
+<body>
+    <div class="info-section">
+        <p class="contact-info">Contact us at: bazaar@example.com | Phone: +123x5x789</p>
+    </div>
+    <nav class="navbar">
+        {% include 'navbar_component.html' %}
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning">
+                <span>{{ message }}</span>
+                
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="main-content">
+        {% block content %}
+        <!-- Default Content Goes Here -->
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        {% include 'footer_component.html' %}
+    </footer>
+
+    <script src="{% static 'path/to/your/scripts.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- view_orders.html -->
+{% extends 'base.html' %}
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/orders.css' %}">
+
+<div class="order-list">
+    <h1>My Orders</h1>
+    <table class="order-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Total Price</th>
+                <th>Products</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            {% if order.order_status == 'Processing' %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.created_at }}</td>
+                <td>SH. {{ order.total_price }}</td>
+                <td>
+                    <ul>
+                        {% for item in order.items.all %}
+                        <li>{{ item.product.brand }} - Quantity: {{ item.quantity }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endif %}
+            {% empty %}
+            <tr>
+                <td colspan="4">You have no processing orders.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

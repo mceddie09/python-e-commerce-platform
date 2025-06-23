@@ -1,0 +1,37 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/Navbar.css' %}">
+
+<nav id="navbar" class="navbar">
+    <div class="navbar-container">
+        <div class="Navlinks">
+            <img class='bazaar_logo' src="{% static 'Images/logo.png' %}" alt="Laptops Bazaar Logo" />
+            
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'search' %}">Search</a>
+            <a href="{% url 'products' %}">Products</a>
+            <a href="{% url 'contact_us' %}">Contact Us</a>
+            <a href="{% url 'about_us' %}">About Us</a>
+
+        
+        {% if request.user.is_authenticated %}
+        
+                            <a class="nav-link" href="{% url 'logout_view' %}">Logout</a>
+                        
+                       <a href="{% url 'profile' %}">Profile</a>
+                    {% else %}
+                            <a class="nav-link" href="{% url 'login_view' %}">Login</a>
+                            <a class="nav-link" href="{% url 'register' %}">Signup</a>
+                    {% endif %}
+         
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-dark">
+                        <i class="bi-cart-fill me-1"></i>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart_quantity">{{ cart_count }}</span>
+                    </a>
+                    
+                
+        </div>
+    </div>
+</nav>
+
+<!-- Include Navbar CSS file -->

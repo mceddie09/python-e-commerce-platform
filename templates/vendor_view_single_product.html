@@ -1,0 +1,25 @@
+{% extends 'vendor.html' %}
+
+{%load static%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+
+<div class="product-container">
+    <div class="product-card">
+        <div class="product-image-container">
+            <img src="{{ product.image.url }}" class="product-image" alt="Product Image">
+        </div>
+        <div class="product-details-container">
+            <h5 class="product-brand"> <strong>Brand: </strong>{{ product.brand }}</h5>
+            <p class="product-price"><strong>Price:</strong>  SH.{{ product.price }}</p>
+            <p class="product-price"> <strong>Available:</strong>  {{ product.quantity }}</p>
+            <p class="product-description"> <strong>Description:</strong><br>  {{ product.description }}</p>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

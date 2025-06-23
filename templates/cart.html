@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/Cart.css' %}">
+
+<div class="shopping-cart">
+  <h1>My Cart</h1>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart_items %}
+      <tr>
+        <td><img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100"></td>
+        <td>{{ item.product.brand }}</td>
+        <td>
+          <form class="pro-update" method="POST" action="{% url 'update_cart_quantity' item.id %}">
+            {% csrf_token %}
+            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10" required>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+        <td>${{ item.product.price }}</td>
+        <td><a href="{% url 'remove_from_cart' item.id %}">Remove</a></td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5">Your cart is empty.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p>Total Price: ${{ total_price }}</p>
+  <button><a href="{% url 'products' %}">Continue Shopping</a></button>
+  <button><a href="{% url 'cart_checkout' %}">Proceed to checkout</a></button>
+</div>
+
+{% endblock %}

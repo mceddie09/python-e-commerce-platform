@@ -1,0 +1,102 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mission-vision {
+    text-align: center;
+    background-image: url('/static/Images/Laptop11.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    line-height: 1.5;
+  }
+  
+  .mission-vision h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+  
+  .contact-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable scrolling if needed */
+  }
+  
+  .section-contact-info {
+    flex: 1;
+    margin: 30px 40px;
+    width: 40%;
+    border-radius: 10px;
+    padding: 0px 20px;
+    border: 1px solid rgb(50, 51, 50);
+    line-height: 2;
+  }
+  
+  .project-team {
+    flex: 1;
+    display: flex;
+    margin: 30px 30px;
+    flex-direction: column;
+    line-height: 1.5;
+  }
+ .project-team h2{
+  margin-bottom: 8px;
+ }
+  
+  .team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .team-member img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .section-testimonials {
+    text-align:start;
+    padding: 0px 20px;
+  }
+  .section-testimonials h2{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .testimonials {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial {
+    flex: 1;
+    margin: 0 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgb(175, 184, 231);
+    padding: 20px;
+  }
+  
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial p {
+    line-height: 1.5;
+  }
+  

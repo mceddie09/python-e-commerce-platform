@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <!-- Include ContactUs CSS file -->
+    <link rel="stylesheet" href="{% static 'css/Contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Newletter.css' %}">
+
+</head>
+<body>
+    <div class='contact-page'>
+
+        <div class="contact-us-container">
+            <section>
+                <div class="contact-form">
+                    <!-- Contact form -->
+                    <h2>Contact Form</h2>
+                    <form method="POST" action="{% url 'search' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <!-- Contact information -->
+                    <h2>Contact Information</h2>
+                    <p>Address: 123 Nairobi Thika Road</p>
+                    <p>Phone: 07xxx546x</p>
+                    <p>Hours: 10:00-18:00 Sunday to Friday</p>
+                </div>
+            </section>
+
+            <section class="map">
+                <div>
+                    <!-- Embedded map -->
+                    <iframe
+                        title="Google Maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255295.5842187398!2d36.78825710928003!3d-1.1650574312182347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f4fa6477133d5%3A0x50a9e4ad0b134643!2sKENYATTA%20UNIVERSITY!5e0!3m2!1sen!2ske!4v1708342247041!5m2!1sen!2ske"
+                        width="100%"
+                        height="400"
+                        style="border: 0"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+            </section>
+        </div>
+
+        <!-- Include Newsletter component -->
+        {% include 'Newsletter.html' %}
+    </div>
+</body>
+</html>
+
+{% endblock %}

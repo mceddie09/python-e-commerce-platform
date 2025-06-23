@@ -1,0 +1,404 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*base*/
+.close-btn {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  background: transparent;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #aaa;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+
+/* Hide the alert when the close button is clicked */
+.alert .close-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.alert .close-btn:focus {
+  outline: none;
+}
+
+.alert.hide {
+  display: none;
+}
+
+
+/*Buyer.html*/
+#header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#username {
+  font-weight: bold;
+}
+
+.buyer-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.buyer-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.active {
+  font-weight: bold;
+  color: yellow;
+}
+
+#logout {
+  color: #fff;
+  text-decoration: none;
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#content {
+  padding: 20px;
+}
+
+.product-item {
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.product-details {
+  margin-bottom: 5px;
+}
+
+.btn-view-product {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Responsive styles for small screens */
+@media only screen and (max-width: 600px) {
+  #main-nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #username {
+      display: block;
+      margin-bottom: 10px;
+  }
+
+  .buyer-nav ul {
+      text-align: center;
+  }
+
+  .buyer-nav li {
+      display: block;
+      margin-bottom: 10px;
+  }
+}
+
+/* Responsive styles for medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  #main-nav {
+      justify-content: space-around;
+  }
+}
+
+
+/*search.html*/
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Header */
+#search-header {
+  background-image: url('/static/Images/Laptop10.jpeg');
+    background-size: cover;
+    background-position: center;
+  background-color: #f5f5f5; 
+  padding: 1rem 0;rgb(241, 14, 14);
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: rgb(231, 233, 236);
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #0648fd; /* Subdued color */
+  font-size: 1.5em;
+}
+
+/* Search card */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+
+.card-body {
+  padding: 1rem;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+
+/* Search form */
+#search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group input{
+  width: 300px;
+}
+
+.form-control {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-btn {
+  align-self: center; /* Align button to right */
+  margin-top: 1rem;
+}
+
+/* Search results */
+#search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Space cards evenly */
+  gap: 10px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Adjust image height as needed */
+  object-fit: cover; /* Crop image to fit */
+}
+
+.card-title {
+  margin-bottom: 0.5em;
+}
+
+/* Responsive media queries */
+@media only screen and (max-width: 768px) {
+  .container {
+      padding: 0.5rem;
+  }
+
+  .title {
+      font-size: 1.5em;
+  }
+
+  .card {
+      width: 100%; /* Make cards full-width on small screens */
+  }
+}
+
+
+/*vendor.html*/
+
+/* Reset default browser styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+#header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+#username {
+  font-weight: bold;
+  color: #333;
+}
+
+#logout {
+  float: right;
+  margin-top: 5px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+#vendor-actions {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#action-heading {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#action-list {
+  list-style: none;
+  padding: 0;
+}
+
+.btn-action {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn-action:hover {
+  background-color: #218838;
+}
+
+/* Media queries for small and medium screens */
+@media only screen and (max-width: 768px) {
+  #header {
+      padding: 5px;
+  }
+
+  .btn {
+      padding: 6px 12px;
+  }
+
+  #vendor-actions {
+      padding: 10px;
+  }
+
+  .btn-action {
+      padding: 6px 12px;
+      margin-right: 5px;
+  }
+}
+
+
+/* Cart_checkout */
+form {
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+
